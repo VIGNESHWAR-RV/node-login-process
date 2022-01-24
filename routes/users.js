@@ -10,7 +10,7 @@ import { auth } from "../middleware/auth.js";
 const router = express.Router();
 
 
-router.get("/",auth,async(request,response)=>{
+router.get("/",async(request,response)=>{
     let result = await getAllUsers();
     response.send(result);
 })
