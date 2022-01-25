@@ -50,7 +50,7 @@ export async function adduser(newuser) {
 
 export async function updateuser(email,hashedpassword) {
     // console.log("newuser",newuser)
-    return await client.db("practise").collection("users").updateOne({username:email},{$set:{password:hashedpassword}});
+    return await client.db("practise").collection("users").updateOne({"username":email},{$set:{"password":hashedpassword}});
 }
 
 
