@@ -37,7 +37,7 @@ router.post("/signup", async (request, response) => {
                 newuser.password = await genPassword(newuser.password) //hashing password
                 console.log(newuser)
                 let result = await adduser(newuser) //adding new user
-                response.send("User added successfully");
+                response.status(200).send(result);
             }else{
                 response.status(404).send({message:"Password validation failed"})
             }
