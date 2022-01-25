@@ -68,3 +68,6 @@ export async function getrequestbyemail(email) {
 export async function getrequestbytoken(token) {
     return await client.db("practise").collection("requests").findOne({ "token": token });
 }
+export async function deleteRequest(token) {
+    return await client.db("practise").collection("requests").deleteOne({ "token": token });
+}
