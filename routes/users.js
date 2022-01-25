@@ -116,7 +116,7 @@ router.put("/reset",async (request,response)=>{
 
   if(requestfromdb){
    let result = updateuser(requestfromdb.email,genPassword(user.password))
-   response .send(result)  
+   response .send(requestfromdb)  
 }  else{
       response.status(404).send({message:"Invalid request"})
   }
