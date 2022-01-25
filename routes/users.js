@@ -107,7 +107,7 @@ router.post("/forgot-password",async (request,response)=>{
 })
 
 
-router.post("/reset",async (request,response)=>{
+router.put("/reset",async (request,response)=>{
     //has token,password
     let user = request.body;
     console.log(user);
@@ -115,8 +115,9 @@ router.post("/reset",async (request,response)=>{
     console.log(requestfromdb);
 
   if(requestfromdb){
-    updateuser(requestfromdb.email,genPassword(user.password))
-  }  else{
+   let result = updateuser(requestfromdb.email,genPassword(user.password))
+   response .send(result)  
+}  else{
       response.status(404).send({message:"Invalid request"})
   }
 })
