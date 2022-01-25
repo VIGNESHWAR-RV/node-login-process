@@ -107,7 +107,7 @@ router.post("/forgot-password",async (request,response)=>{
 })
 
 
-router.put("/reset",async (request,response)=>{
+router.post("/reset",async (request,response)=>{
     //has token,password
     let user = request.body;
     console.log(user);
