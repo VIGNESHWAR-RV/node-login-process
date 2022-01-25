@@ -112,11 +112,11 @@ router.put("/reset",async (request,response)=>{
     let user = request.body;
     //console.log(user);
     let requestfromdb = await getrequestbytoken(user.token)
-   console.log("tocheck",requestfromdb);
+   //console.log("tocheck",requestfromdb);
 
   if(requestfromdb){
    let result = await updateuser(requestfromdb.email,await genPassword(user.password));
-   console.log(result)
+   //console.log(result)
         if(result){
                await deleteRequest(user.token);
             }  
