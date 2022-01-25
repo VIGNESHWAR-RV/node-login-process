@@ -112,11 +112,11 @@ router.put("/reset",async (request,response)=>{
     let user = request.body;
     console.log(user);
     let requestfromdb = await getrequestbytoken(user.token)
-    console.log(requestfromdb);
+    console.log(requestfromdb.email,genPassword(user.password));
 
   if(requestfromdb){
    let result = updateuser(requestfromdb.email,genPassword(user.password))
-   response.send(requestfromdb)  
+   response.send(requestfromdb.email,genPassword(user.password))  
 }  else{
       response.status(404).send({message:"Invalid request"})
   }
