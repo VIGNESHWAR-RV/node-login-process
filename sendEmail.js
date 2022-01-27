@@ -19,7 +19,7 @@ export function sendResetLink(email,token){
         // text: `To reset your password, Please click on this link: http://localhost:3000/reset/${token}`,
         html:`
         <h3>Password Reset Instructions</h3>
-        <div>To reset your password, Please click <a href=https://basic-react-app2.netlify.app/${token}>here</a></div>
+        <div>To reset your password, Please click <a href=https://basic-react-app2.netlify.app/reset/${token}>here</a></div>
         <div><small>Kindly check in spam folder also.</small></div>
         `
     };
